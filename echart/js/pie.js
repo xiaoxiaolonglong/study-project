@@ -64,7 +64,7 @@ var option1 = {
                     show: true
                 }
             },
-            itemStyle: { //设置柱形颜色
+            itemStyle: { //设置扇形颜色
                 color: function (params) {
                     var colorList = ["#006eda", "#25c9ff", "#12ca8d"];
                     return colorList[params.dataIndex];
@@ -148,7 +148,7 @@ var option2 = {
                     show: true
                 }
             },
-            itemStyle: { //设置柱形颜色
+            itemStyle: { //设置扇形颜色
                 color: function (params) {
                     var colorList = ["#006eda", "#25c9ff", "#12ca8d"];
                     return colorList[params.dataIndex];
