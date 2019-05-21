@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/echarts.min.js"></script>
+</head>
+
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main1" style="width: 600px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart1 = echarts.init(document.getElementById('main1'));
+        var option1 = {
+            grid: {
+                left: '50%',
+                right: '4%',
+                bottom: '12%',
+                containLabel: false
+            },
+            legend: {
+                orient: 'vertical',
+                x: 'left',
+                y: 'center',
+                data: ['出所就医', '请假出所', '提解出所'],
+                formatter: function (name) {
+                    var index = 0;
+                    var clientlabels = ['出所就医', '请假出所', '提解出所'];
+                    var clientcounts = [117, 89, 89];
+                    clientlabels.forEach(function (value, i) {
+                        if (value == name) {
+                            index = i;
+                        }
+                    });
+                    if (name.length == 5) {
+                        return name + " " + clientcounts[index] + "人";
+                    } else {
+                        return name + " " + clientcounts[index] + "人";
+                    }
+                }
+            },
+            xAxis: {
+                data: ['出所就医', '请假出所', '提解出所'],
+                show: false,
+                axisTick: { //刻度
+                    show: false
+                }
+            },
+            yAxis: {
+                type: "value",
+                axisLine: {
+                    show: false
+                },
+                axisLabel: { //刻度标签
+                    show: false
+                },
+                axisTick: { //刻度
+                    show: false
+                },
+                splitLine: { //坐标轴在 grid 区域中的分隔线。(横线)
+                    show: false
+                }
+            },
+            series: [{ //柱形图背景
+                name: '出所就医',
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        color: '#006eda'
+                    }
+                },
+                barWidth: 40,
+                data: [45]
+            }, { //柱形图背景
+                name: '请假出所',
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        color: '#25c9ff'
+                    }
+                },
+                barWidth: 40,
+                data: [28]
+            }, { //柱形图背景
+                name: '提解出所',
+                type: 'bar',
+                itemStyle: {
+                    normal: {
+                        color: '#12ca8d'
+                    }
+                },
+                barWidth: 40,
+                data: [10]
+            }]
+        }
+        myChart1.setOption(option1);
+    </script>
+</body>
+
+</html>

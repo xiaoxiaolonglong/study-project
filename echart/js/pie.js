@@ -6,7 +6,7 @@ var option1 = {
     //     x:'center'
     // },
     title: {
-        text: '共246人',
+        text: '共'+117+89+89+'人',
         x: 'center',
         y: 'center'
    },
@@ -40,7 +40,7 @@ var option1 = {
         {
             name:'超期预警',
             type:'pie',
-            radius : [50, 110],
+            radius : [80, 110],
             center : ['50%', '50%'],
             roseType : 'radius',
             pie:{
@@ -91,7 +91,7 @@ var option2 = {
     //     x:'center'
     // },
     title: {
-        text: '共246人',
+        text: '共'+117+89+89+'人',
         x: 'center',
         y: 'center'
    },
